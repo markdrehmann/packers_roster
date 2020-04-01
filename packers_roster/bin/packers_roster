@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require_relative '../lib/packers_roster'
+
+PackersRoster::CLI.new.call
+
+
+
