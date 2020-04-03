@@ -1,3 +1,5 @@
+
+
 class PackersRoster::Scraper
   
   def self.scrape_roster
@@ -10,7 +12,16 @@ class PackersRoster::Scraper
     end
     array
   end
+  
+  # each player needs name and profile within same hash to add to array 
+  # need to assign within one iteration to have them in the same hash
+  
+  def self.scrape_profile(profile_url)
+    
+  end
       
-      # each player needs name and profile within a hash to add to array - need to assign within iteration to have them in the same hash
+      
       
 end
+
+PackersRoster::Scraper.scrape_roster
