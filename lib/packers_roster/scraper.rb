@@ -24,4 +24,3 @@ class PackersRoster::Scraper
       
 end
 
-PackersRoster::Scraper.scrape_roster
