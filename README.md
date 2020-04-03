@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-
-Hi! 👋
-
-You've opened the IDE Sandbox, an environment that you can access on "readme" and "code-along" lessons in Learn. It's a great place to experiment with code! 🎉
-
-*IMPORTANT*
-Saving varies by the type of work you are doing:
--- Most of the work you do in the Sandbox is automatically saved on your behalf to the `learn-co-sandbox` repository in your GitHub account. Please DO NOT touch this repository in GitHub. Doing so will affect your Sandbox experience, and potentially cause your work to fall out of sync.
--- *Git repositories that you clone into the Sandbox are NOT automatically saved.* In this case, you are responsible for committing and pushing your work to GitHub. 
-
-To learn more about the Sandbox, please visit http://help.learn.co/technical-support/learn-ide-in-browser/ide-in-browser-sandbox
-=======
 # PackersRoster
 
 Learn more about the Green Bay Packers players!
@@ -54,4 +41,3 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Everyone interacting in the PackersRoster project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'classy-parameter-2670'/packers_roster/blob/master/CODE_OF_CONDUCT.md).
 # packers_roster
->>>>>>> 4f670cefab23b721361ec922894eff7730f0acc8
