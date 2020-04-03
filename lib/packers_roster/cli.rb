@@ -6,8 +6,10 @@ class PackersRoster::CLI
     puts "  2. To search by number"
     puts "  3. To search by position"
     
+    PackersRoster::Scraper.scrape_roster
+    
 
-    # binding.pry
+    
 
   end
   

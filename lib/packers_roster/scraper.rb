@@ -9,6 +9,7 @@ class PackersRoster::Scraper
       p_name = player.text
       p_profile = player.attr("href")
       array << {:name => p_name, :profile_url => p_profile}
+      puts p_name
     end
     array
   end

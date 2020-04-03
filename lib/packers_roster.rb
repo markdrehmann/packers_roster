@@ -6,6 +6,7 @@ require_relative "./packers_roster/position"
 
 require 'pry'
 require 'nokogiri'
+require 'open-uri'
 
 module PackersRoster
   class Error < StandardError; end
