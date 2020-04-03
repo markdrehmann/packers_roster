@@ -7,7 +7,7 @@ class PackersRoster::CLI
     puts "  3. To search by position"
     
 
-    binding.pry
+    # binding.pry
 
   end
   
