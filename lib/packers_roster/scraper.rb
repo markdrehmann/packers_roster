@@ -1,9 +1,9 @@
 class PackersRoster::Scraper
   
-  def self.scrape_roster(roster_url)
-    doc = Nokogiri::HTML(open(roster_url))
+  def self.scrape_roster
+    doc = Nokogiri::HTML(open("https://packers.com/team/players-roster"))
     array = []
-    doc.css("span.nfl-o-roster__player-name").each do |player|
+    doc.css("span.nfl-o-roster__player-name a").each do |player|
       p_name = player.text
       p_profile = player.attr("href")
       array << {:name => p_name, :profile_url => p_profile}
