@@ -1,5 +1,5 @@
 class PackersRoster::Player
-  attr_accessor :name, :number, :position, :profile_url, :TCKLS, :SCK, :FF, :INT, :REC, :YDS, :AVG, :TDS, :G, :GS, :CAR, :FGA, :FGM, :PCT, :LNG, :PUNTS, :RTG, :"In 20"
+  attr_accessor :name, :number, :position, :profile_url, :TCKLS, :SCK, :FF, :INT, :REC, :YDS, :AVG, :TDS, :G, :GS, :CAR, :FGA, :FGM, :PCT, :LNG, :PUNTS, :RTG
   @@all = []
   
   
