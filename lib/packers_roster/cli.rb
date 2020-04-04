@@ -10,11 +10,9 @@ class PackersRoster::CLI
     PackersRoster::Scraper.scrape_roster
     PackersRoster::Player.create_from_collection
     
+    
     ### this is printing something out to make sure code is working
-    PackersRoster::Player.all.each {|player| puts player.profile_url}
-    
-    
-
+    puts PackersRoster::Player.all[0].name
     
 
   end
