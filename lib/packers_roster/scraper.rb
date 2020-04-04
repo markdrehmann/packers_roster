@@ -23,11 +23,9 @@ class PackersRoster::Scraper
     
     stats_hash[:position] = position
     stats_hash[:number] = number
+    
     stats_hash
     
   end
-      
-      
-      
 end
 
