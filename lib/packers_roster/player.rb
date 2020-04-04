@@ -1,5 +1,5 @@
 class PackersRoster::Player
-  attr_accessor :name, :number, :position, :profile_url
+  attr_accessor :name, :number, :position, :profile_url, :position, :number
   @@all = []
   
   
@@ -15,7 +15,8 @@ class PackersRoster::Player
     end
   end
 
-  def add_player_stats(stats_hash)
+  def add_player_stats
+    stats_hash = PackersRoster::Scraper.scrape_profile(self.profile_url)
     stats_hash.each do |key, value|
       self.send(("#{key}="), value)
     end
