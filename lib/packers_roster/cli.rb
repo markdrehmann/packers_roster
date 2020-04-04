@@ -8,6 +8,9 @@ class PackersRoster::CLI
     
     PackersRoster::Scraper.scrape_roster
     
+    PackersRoster::Player.all
+    
+    
 
     
 
