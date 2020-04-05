@@ -21,6 +21,12 @@ class PackersRoster::Player
       self.send(("#{key}="), value)
     end
   end
+  
+  def list_stats
+    puts @name
+    puts @number
+    puts @position
+  end
 
   def self.all
     @@all
