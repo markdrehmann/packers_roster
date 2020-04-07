@@ -14,13 +14,6 @@ class PackersRoster::Player
       PackersRoster::Player.new(player_hash)
     end
   end
-
-  def add_player_stats
-    stats_hash = PackersRoster::Scraper.scrape_profile(self.profile_url)
-    stats_hash.each do |key, value|
-      self.send(("#{key}="), value)
-    end
-  end
   
   def list_stats
     puts @name
