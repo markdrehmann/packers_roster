@@ -25,6 +25,14 @@ class PackersRoster::Player
     puts @experience
     puts @college
   end
+  
+  def self.find_by_name(name)
+    
+  end
+  
+  def self.find_by_number(number)
+    
+  end
 
   def self.all
     @@all
