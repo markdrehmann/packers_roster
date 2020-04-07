@@ -1,38 +1,18 @@
 class PackersRoster::Scraper
   
+  SITE = "https://packers.com/team/players-roster"
+  
   def self.scrape_roster
-    doc = Nokogiri::HTML(open("https://packers.com/team/players-roster"))
+    doc = Nokogiri::HTML(open(SITE))
     array = []
-    doc.css("span.nfl-o-roster__player-name a").each do |player|
-      p_name = player.text
-      p_profile = player.attr("href")
-      array << {:name => p_name, :profile_url => p_profile}
+    doc.css("tr").each do |p_page|
+        info = p_page.text.strip.split(" ")
+        p_name = info[0..1].join(" ")
+        p_college = info[8..-1].join(" ")
+        array << {name: p_name, number: info[2], position: info[3], height: info[4], weight: info[5], age: info[6], experience: info[7], college: p_college}
     end
+    array.shift
     array
   end
   
-  # each player needs name and profile within same hash to add to array 
-  # need to assign within one iteration to have them in the same hash
-  
-  def self.scrape_profile(profile_url)
-    p_site = "https://www.packers.com" + profile_url
-    doc = Nokogiri::HTML(open(p_site))
-    
-    position = doc.css("h3.d3-o-media-object__primary-subtitle").text.strip
-    number = doc.css("h3.d3-o-media-object__secondary-subtitle").text.strip.delete("#")
-  
-    stats = doc.css("span.nfl-t-stats-tile__label-full").map do |stat|
-      stat.text.to_sym
-    end
-
-    stat_value = doc.css("div.nfl-t-stats-tile__value").map do |value|
-      value.text.strip
-    end
-
-    stats_hash = Hash[stats.zip(stat_value)]
-    stats_hash[:position] = position
-    stats_hash[:number] = number
-    stats_hash
-  end
 end
-
