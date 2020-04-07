@@ -17,7 +17,10 @@ class PackersRoster::CLI
     # puts PackersRoster::Player.all[40].list_stats
     
     ### testing find_by_name method and list_stats
-    PackersRoster::Player.find_by_name("Corey Linsley").list_stats
+    PackersRoster::Player.find_by_name("Aaron Rodgers").list_stats
+    
+    ### testing find_by_position method
+    PackersRoster::Player.find_by_position("WR").each {|p| puts p.name}
 
   end
   
