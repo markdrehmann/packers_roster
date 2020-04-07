@@ -14,9 +14,10 @@ class PackersRoster::CLI
    
     
     ### this is printing something out to make sure code is working
-    puts PackersRoster::Player.all[40].list_stats
+    # puts PackersRoster::Player.all[40].list_stats
     
-    # PackersRoster::Player.find_by_name("Devin Funchess").list_stats
+    ### testing find_by_name method and list_stats
+    PackersRoster::Player.find_by_name("Corey Linsley").list_stats
 
   end
   
