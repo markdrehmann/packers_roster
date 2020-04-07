@@ -27,11 +27,11 @@ class PackersRoster::Player
   end
   
   def self.find_by_name(name)
-    
+    self.all.detect{|player| player.name == name}
   end
   
   def self.find_by_number(number)
-    
+    self.all.detect{|player| player.number == name}
   end
 
   def self.all
