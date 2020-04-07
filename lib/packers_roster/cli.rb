@@ -11,7 +11,7 @@ class PackersRoster::CLI
     PackersRoster::Player.create_from_collection
     
     ### this is printing something out to make sure code is working
-    puts PackersRoster::Player.all[50].list_stats
+    puts PackersRoster::Player.all[40].list_stats
     
 
   end
