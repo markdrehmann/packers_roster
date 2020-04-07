@@ -19,6 +19,11 @@ class PackersRoster::Player
     puts @name
     puts @number
     puts @position
+    puts @height
+    puts @weight
+    puts @age
+    puts @experience
+    puts @college
   end
 
   def self.all
