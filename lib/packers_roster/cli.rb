@@ -10,6 +10,7 @@ class PackersRoster::CLI
     
     input = ""
     until input == "quit"
+    puts "      -------"
     puts "  1 - To search by name"
     puts "  2 - To search by number"
     puts "  3 - To search by position"
@@ -36,12 +37,7 @@ class PackersRoster::CLI
     end
       
     
-    ### testing find_by_name method and list_stats
-    # PackersRoster::Player.find_by_name("Aaron Rodgers").list_stats
     
-    ### testing find_by_position method
-    # PackersRoster::Player.find_by_position("WR").each {|p| puts p.name}
-
   end
   
 end
