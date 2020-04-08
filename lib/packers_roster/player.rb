@@ -34,7 +34,7 @@ class PackersRoster::Player
     self.all.detect{|player| player.number == number}
   end
   
-  def self.find_by_position(position)
+  def self.all_at_position(position)
     self.all.select{|player| player.position == position}
   end
 
