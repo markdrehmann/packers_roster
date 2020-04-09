@@ -16,7 +16,7 @@ class PackersRoster::Player
   end
   
   def list_stats
-    puts name.yellow
+    puts "\n#{name}".yellow
     puts "  Number      #{number}".green
     puts "  Position    #{position}".green
     puts "  Height      #{height}".green
