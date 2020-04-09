@@ -38,9 +38,10 @@ class PackersRoster::CLI
           puts "Go Pack!".green
         end
       elsif input == "3"
-        puts "\nEnter a position".green
+        puts "\nEnter one of the following positions:".green
+        puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
         p_input = gets.strip
-        PackersRoster::Player.all_at_position(p_input).each{|p| puts p.name.yellow}
+        PackersRoster::Player.all_at_position(p_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
