@@ -5,7 +5,7 @@ class PackersRoster::CLI
     PackersRoster::Scraper.scrape_roster
     PackersRoster::Player.create_from_collection
     
-    puts "Welcome to the Packers Roster app!"
+    puts "Welcome to the Packers Roster app!".green
     puts "To learn more about your favorite players, enter:"
     
     input = ""

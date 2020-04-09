@@ -7,6 +7,7 @@ require_relative "./packers_roster/scraper"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module PackersRoster
   class Error < StandardError; end
