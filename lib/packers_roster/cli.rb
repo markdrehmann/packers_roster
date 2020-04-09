@@ -1,6 +1,9 @@
 class PackersRoster::CLI
   def call
     
+    # potention refactoring - create a #start method that gets called in #called
+    # so the #call method is just "scrape, welcome, learn more, #start" - idea from 'worlds-best-restaurants'
+    
     PackersRoster::Scraper.scrape_roster
     PackersRoster::Player.create_from_collection
     
