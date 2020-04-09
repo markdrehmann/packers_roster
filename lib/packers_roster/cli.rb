@@ -1,7 +1,6 @@
 class PackersRoster::CLI
   def call
     
-     ### this is my scraping to create players and their stats
     PackersRoster::Scraper.scrape_roster
     PackersRoster::Player.create_from_collection
     
@@ -15,6 +14,7 @@ class PackersRoster::CLI
     puts "To end your search, type 'quit'".green
     
       input = gets.strip
+      
       if input == "1"
         puts "\nEnter the player's name".green
         user_input = gets.strip
@@ -30,6 +30,7 @@ class PackersRoster::CLI
           input = "quit"
           puts "Go Pack!".green
         end
+        
       elsif input == "2"
         puts "\nEnter the player's number".green
         user_input = gets.strip
@@ -45,6 +46,7 @@ class PackersRoster::CLI
           input = "quit"
           puts "Go Pack!".green
         end
+        
       elsif input == "3"
         positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
         puts "\nEnter one of the following positions:".green
@@ -62,13 +64,15 @@ class PackersRoster::CLI
           input = "quit"
           puts "Go Pack!".green
         end
+        
       elsif input == "quit"
         puts "Go Pack!".green
       else
         puts "Invalid entry, can you try again?".red
       end
-    end
+      
+    end # closes until
     
-  end
+  end # closes call method
   
 end
