@@ -17,11 +17,11 @@ class PackersRoster::CLI
       input = gets.strip
       if input == "1"
         puts "\nEnter the player's name".green
-        p_input = gets.strip
-        if PackersRoster::Player.find_by_name(p_input) == nil
+        user_input = gets.strip
+        if PackersRoster::Player.find_by_name(user_input) == nil
           puts "Invalid entry".red
         else
-          PackersRoster::Player.find_by_name(p_input).list_stats
+          PackersRoster::Player.find_by_name(user_input).list_stats
         end
         puts "Would you like to run another search? y/n".green
         input = gets.strip
@@ -32,11 +32,11 @@ class PackersRoster::CLI
         end
       elsif input == "2"
         puts "\nEnter the player's number".green
-        p_input = gets.strip
-        if PackersRoster::Player.find_by_number(p_input) == nil
+        user_input = gets.strip
+        if PackersRoster::Player.find_by_number(user_input) == nil
           puts "Invalid entry".red
         else
-          PackersRoster::Player.find_by_number(p_input).list_stats
+          PackersRoster::Player.find_by_number(user_input).list_stats
         end
         puts "Would you like to run another search? y/n".green
         input = gets.strip
@@ -46,10 +46,15 @@ class PackersRoster::CLI
           puts "Go Pack!".green
         end
       elsif input == "3"
+        positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
         puts "\nEnter one of the following positions:".green
         puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
-        p_input = gets.strip
-        PackersRoster::Player.all_at_position(p_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
+        user_input = gets.strip
+        if positions.include?(user_input)
+          PackersRoster::Player.all_at_position(user_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
+        else
+          puts "Invalid entry".red
+        end
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
