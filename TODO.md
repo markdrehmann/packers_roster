@@ -25,10 +25,15 @@ flow of program
   
   Welcome to the Packers Roster App!
   
-  Enter
+  To learn more about a player:
+  
+    Enter '1' to search by name
+    Enter '2' to search by number
+    Enter '3' to search by position
+    
   To end your search, type 'quit'
   
-  Enter the player's number, bitch
+  
   
   
   

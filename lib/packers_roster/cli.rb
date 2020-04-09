@@ -33,8 +33,6 @@ class PackersRoster::CLI
         puts "Invalid entry, can you try again?".red
       end
     end
-      
-    
     
   end
   
