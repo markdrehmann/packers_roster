@@ -18,7 +18,7 @@ class PackersRoster::CLI
       if input == "1"
         puts "\nEnter the player's name".green
         p_input = gets.strip
-        PackersRoster::Player.find_by_name(p_input).list_stats
+        PackersRoster::Player.find_by_name(p_input).list_stats unless PackersRoster::Player.find_by_name(p_input) == nil
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
@@ -29,7 +29,7 @@ class PackersRoster::CLI
       elsif input == "2"
         puts "\nEnter the player's number".green
         p_input = gets.strip
-        PackersRoster::Player.find_by_number(p_input).list_stats
+        PackersRoster::Player.find_by_number(p_input).list_stats unless PackersRoster::Player.find_by_number(p_input) == nil
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
