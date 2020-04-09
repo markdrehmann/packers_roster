@@ -25,10 +25,8 @@ flow of program
   
   Welcome to the Packers Roster App!
   
-  To search for players by name, enter 1
-  To search for players by number, enter 2
-  To search for players by position, enter 3
-  To quit at any time, type 'quit'
+  Enter
+  To end your search, type 'quit'
   
   Enter the player's number, bitch
   

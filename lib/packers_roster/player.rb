@@ -23,7 +23,7 @@ class PackersRoster::Player
     puts "  Weight      #{weight}".green
     puts "  Age         #{age}".green
     puts "  Experience  #{experience}".green
-    puts "  College     #{college}".green
+    puts "  College     #{college}\n".green
   end
   
   def self.find_by_name(name)

@@ -5,33 +5,32 @@ class PackersRoster::CLI
     PackersRoster::Scraper.scrape_roster
     PackersRoster::Player.create_from_collection
     
-    puts "\nWelcome to the Packers Roster app!\n".green
-    puts "To learn more about your favorite players, enter:".green
-    
+    puts "\nWelcome to the Packers Roster App!\n".green
+    puts "To learn more about a player:\n".green
     input = ""
     until input == "quit"
-    puts "  1 - To search by name".green
-    puts "  2 - To search by number".green
-    puts "  3 - To search by position".green
-    puts "To quit at any time, type 'quit'".green
+    puts "  Enter '1' to search by name".green
+    puts "  Enter '2' to search by number".green
+    puts "  Enter '3' to search by position\n".green
+    puts "To end your search, type 'quit'".green
     
       input = gets.strip
       if input == "1"
-        puts "Enter the player's name".green
+        puts "\nEnter the player's name".green
         p_input = gets.strip
         PackersRoster::Player.find_by_name(p_input).list_stats
       elsif input == "2"
-        puts "Enter the player's number".green
+        puts "\nEnter the player's number".green
         p_input = gets.strip
         PackersRoster::Player.find_by_number(p_input).list_stats
       elsif input == "3"
-        puts "Enter a position".green
+        puts "\nEnter a position".green
         p_input = gets.strip
-        PackersRoster::Player.all_at_position(p_input).each{|p| puts p.name}
+        PackersRoster::Player.all_at_position(p_input).each{|p| puts p.name.yellow}
       elsif input == "quit"
-        puts "Thanks!".green
+        puts "Go Pack!".green
       else
-        puts "I'm sorry, can you try again?".green
+        puts "Invalid entry, can you try again?".red
       end
     end
       
