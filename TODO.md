@@ -33,7 +33,9 @@ flow of program
     
   To end your search, type 'quit'
   
+  --search
   
+  Would you like to do another search? Y/N
   
   
   
