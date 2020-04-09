@@ -23,7 +23,15 @@ flow of program
   
   ## This is how I want the application to look when run:
   
-  -- Welcome to the Packers Roster App! 
+  Welcome to the Packers Roster App!
+  
+  To search for players by name, enter 1
+  To search for players by number, enter 2
+  To search for players by position, enter 3
+  To quit at any time, type 'quit'
+  
+  Enter the player's number, bitch
+  
   
   
   
