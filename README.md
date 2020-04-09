@@ -4,23 +4,13 @@ Learn more about the Green Bay Packers players!
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'packers_roster'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install packers_roster
+Fork and Clone this repo from https://github.com/markdrehmann/packers_roster
+Run 'bundle install'
 
 ## Usage
 
-TODO: Write usage instructions here
+Run the file - ./bin/packers_roster
+Follow the directions to learn more about Packers players!
 
 ## Development
 
