@@ -21,7 +21,9 @@ class PackersRoster::CLI
       if input == "1"
         puts "\nEnter the player's name".green
         user_input = gets.strip
-        if PackersRoster::Player.find_by_name(user_input) == nil
+        if user_input == "Inigo Montoya"
+          puts "You killed my father. Prepare to die.".red
+        elsif PackersRoster::Player.find_by_name(user_input) == nil
           puts "Invalid entry".red
         else
           PackersRoster::Player.find_by_name(user_input).list_stats
