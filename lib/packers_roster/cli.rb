@@ -1,6 +1,6 @@
 class PackersRoster::CLI
   def call
-    
+
     # potention refactoring - create a #start method that gets called in #called
     # so the #call method is just "scrape, welcome, learn more, #start" - idea from 'worlds-best-restaurants'
     
@@ -11,8 +11,7 @@ class PackersRoster::CLI
     
     # should this ^ be the whole call method, with #start?
     ## more methods to simplify code below:
-    # search_by_name, so if input == 1, run that method
-    # search_by_number if input == 2
+    
     # search_by_position if input == 3
     # another_search method
     # make POSITIONS constant?
@@ -28,6 +27,7 @@ class PackersRoster::CLI
       
       if input == "1"
         search_by_name
+        
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
@@ -37,13 +37,8 @@ class PackersRoster::CLI
         end
         
       elsif input == "2"
-        puts "\nEnter the player's number".green
-        user_input = gets.strip
-        if PackersRoster::Player.find_by_number(user_input) == nil
-          puts "Invalid entry".red
-        else
-          PackersRoster::Player.find_by_number(user_input).list_stats
-        end
+        search_by_number
+        
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
@@ -53,15 +48,8 @@ class PackersRoster::CLI
         end
         
       elsif input == "3"
-        positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
-        puts "\nEnter one of the following positions:".green
-        puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
-        user_input = gets.strip
-        if positions.include?(user_input)
-          PackersRoster::Player.all_at_position(user_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
-        else
-          puts "Invalid entry".red
-        end
+        search_by_position
+        
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
@@ -100,6 +88,28 @@ class PackersRoster::CLI
       puts "Invalid entry".red
     else
       PackersRoster::Player.find_by_name(name_input).list_stats
+    end
+  end
+  
+  def search_by_number
+    puts "\nEnter the player's number".green
+    user_input = gets.strip
+    if PackersRoster::Player.find_by_number(user_input) == nil
+      puts "Invalid entry".red
+    else
+      PackersRoster::Player.find_by_number(user_input).list_stats
+    end
+  end
+  
+  def search_by_position
+    positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
+    puts "\nEnter one of the following positions:".green
+    puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
+    user_input = gets.strip
+    if positions.include?(user_input)
+      PackersRoster::Player.all_at_position(user_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
+    else
+      puts "Invalid entry".red
     end
   end
   
