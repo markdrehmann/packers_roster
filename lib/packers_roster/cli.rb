@@ -7,7 +7,6 @@ class PackersRoster::CLI
     puts "To learn more about a player:".green
     
     # should this ^ be the whole call method, with a #start with more cli methods?
-    
     # make POSITIONS constant?
     
     input = nil
@@ -15,10 +14,8 @@ class PackersRoster::CLI
       menu
       
       input = gets.strip
-      
       if input == "1"
         search_by_name
-        
         puts "Would you like to run another search? Y/N".green
         input = gets.strip.upcase
         if input == "Y"
@@ -29,7 +26,6 @@ class PackersRoster::CLI
         
       elsif input == "2"
         search_by_number
-        
         puts "Would you like to run another search? Y/N".green
         input = gets.strip.upcase
         if input == "Y"
@@ -40,7 +36,6 @@ class PackersRoster::CLI
         
       elsif input == "3"
         search_by_position
-        
         puts "Would you like to run another search? Y/N".green
         input = gets.strip.upcase
         if input == "Y"
@@ -54,10 +49,15 @@ class PackersRoster::CLI
       else
         puts "Invalid entry, can you try again?".red
       end
-      
-    end # closes until
-    
+    end
   end # closes call method
+  
+  def menu
+    puts "\n  Enter '1' to search by name".green
+    puts "  Enter '2' to search by number".green
+    puts "  Enter '3' to search by position\n".green
+    puts "To end your search, type 'quit'".green
+  end
   
   ## this works except it doesn't close the "until" loop, probably because input = "quit" is no longer in scope. I know there has to be a better way than the until loop, but that's a slightly bigger project...
   # def another_search
@@ -103,12 +103,4 @@ class PackersRoster::CLI
       puts "Invalid entry".red
     end
   end
-  
-  def menu
-    puts "\n  Enter '1' to search by name".green
-    puts "  Enter '2' to search by number".green
-    puts "  Enter '3' to search by position\n".green
-    puts "To end your search, type 'quit'".green
-  end
-  
 end
