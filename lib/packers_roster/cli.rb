@@ -19,23 +19,15 @@ class PackersRoster::CLI
     
     input = nil
     until input == "quit"
-    puts "\n  Enter '1' to search by name".green
-    puts "  Enter '2' to search by number".green
-    puts "  Enter '3' to search by position\n".green
-    puts "To end your search, type 'quit'".green
+      puts "\n  Enter '1' to search by name".green
+      puts "  Enter '2' to search by number".green
+      puts "  Enter '3' to search by position\n".green
+      puts "To end your search, type 'quit'".green
     
       input = gets.strip
       
       if input == "1"
-        puts "\nEnter the player's name".green
-        name_input = gets.strip
-        if name_input == "Inigo Montoya"
-          puts "You killed my father. Prepare to die.".red
-        elsif PackersRoster::Player.find_by_name(name_input) == nil
-          puts "Invalid entry".red
-        else
-          PackersRoster::Player.find_by_name(name_input).list_stats
-        end
+        search_by_name
         puts "Would you like to run another search? y/n".green
         input = gets.strip
         if input == "y"
@@ -98,5 +90,17 @@ class PackersRoster::CLI
   #     puts "Go Pack!".green
   #   end
   # end
+  
+  def search_by_name
+    puts "\nEnter the player's name".green
+    name_input = gets.strip
+    if name_input == "Inigo Montoya"
+      puts "You killed my father. Prepare to die.".red
+    elsif PackersRoster::Player.find_by_name(name_input) == nil
+      puts "Invalid entry".red
+    else
+      PackersRoster::Player.find_by_name(name_input).list_stats
+    end
+  end
   
 end
