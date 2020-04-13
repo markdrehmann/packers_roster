@@ -33,10 +33,10 @@ class PackersRoster::CLI
       elsif input == "2"
         search_by_number
         
-        puts "Would you like to run another search? y/n".green
-        input = gets.strip
-        if input == "y"
-        elsif input == "n"
+        puts "Would you like to run another search? Y/N".green
+        input = gets.strip.upcase
+        if input == "Y"
+        elsif input == "N"
           input = "quit"
           puts "Go Pack!".green
         end
@@ -44,10 +44,10 @@ class PackersRoster::CLI
       elsif input == "3"
         search_by_position
         
-        puts "Would you like to run another search? y/n".green
-        input = gets.strip
-        if input == "y"
-        elsif input == "n"
+        puts "Would you like to run another search? Y/N".green
+        input = gets.strip.upcase
+        if input == "Y"
+        elsif input == "N"
           input = "quit"
           puts "Go Pack!".green
         end
@@ -64,10 +64,10 @@ class PackersRoster::CLI
   
   ## this works except it doesn't close the "until" loop, probably because input = "quit" is no longer in scope. I know there has to be a better way than the until loop, but that's a slightly bigger project...
   # def another_search
-  #   puts "Would you like to run another search? y/n".green
-  #   input = gets.strip
-  #   if input == "y"
-  #   elsif input == "n"
+  #   puts "Would you like to run another search? Y/N".green
+  #   input = gets.strip.upcase
+  #   if input == "Y"
+  #   elsif input == "N"
   #     input = "quit"
   #     puts "Go Pack!".green
   #   end
