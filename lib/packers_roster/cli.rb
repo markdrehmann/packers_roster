@@ -9,42 +9,24 @@ class PackersRoster::CLI
     # should this ^ be the whole call method, with a #start with more cli methods?
     # make POSITIONS constant?
     
-    input = nil
-    until input == "quit"
+    @input = nil
+    until @input == "quit"
       menu
       
-      input = gets.strip
-      if input == "1"
+      @input = gets.strip
+      if @input == "1"
         search_by_name
-        puts "Would you like to run another search? Y/N".green
-        input = gets.strip.upcase
-        if input == "Y"
-        elsif input == "N"
-          input = "quit"
-          puts "Go Pack!".green
-        end
+        another_search
         
-      elsif input == "2"
+      elsif @input == "2"
         search_by_number
-        puts "Would you like to run another search? Y/N".green
-        input = gets.strip.upcase
-        if input == "Y"
-        elsif input == "N"
-          input = "quit"
-          puts "Go Pack!".green
-        end
+        another_search
         
-      elsif input == "3"
+      elsif @input == "3"
         search_by_position
-        puts "Would you like to run another search? Y/N".green
-        input = gets.strip.upcase
-        if input == "Y"
-        elsif input == "N"
-          input = "quit"
-          puts "Go Pack!".green
-        end
+        another_search
         
-      elsif input == "quit"
+      elsif @input == "quit"
         puts "Go Pack!".green
       else
         puts "Invalid entry, can you try again?".red
@@ -59,16 +41,15 @@ class PackersRoster::CLI
     puts "To end your search, type 'quit'".green
   end
   
-  ## this works except it doesn't close the "until" loop, probably because input = "quit" is no longer in scope. I know there has to be a better way than the until loop, but that's a slightly bigger project...
-  # def another_search
-  #   puts "Would you like to run another search? Y/N".green
-  #   input = gets.strip.upcase
-  #   if input == "Y"
-  #   elsif input == "N"
-  #     input = "quit"
-  #     puts "Go Pack!".green
-  #   end
-  # end
+  def another_search
+    puts "Would you like to run another search? Y/N".green
+    @input = gets.strip.upcase
+    if @input == "Y"
+    elsif @input == "N"
+      @input = "quit"
+      puts "Go Pack!".green
+    end
+  end
   
   def search_by_name
     puts "\nEnter the player's name".green
