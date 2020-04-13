@@ -2,7 +2,6 @@ class PackersRoster::Player
   attr_accessor :name, :number, :position, :height, :weight, :age, :experience, :college
   @@all = []
   
-  
   def initialize(player_hash)
     player_hash.each {|key, value| self.send(("#{key}="), value)}
     @@all << self
@@ -40,5 +39,4 @@ class PackersRoster::Player
   def self.all
     @@all
   end
-  
 end
