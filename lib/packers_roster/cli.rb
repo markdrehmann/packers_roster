@@ -1,19 +1,13 @@
 class PackersRoster::CLI
   def call
 
-    # potention refactoring - create a #start method that gets called in #called
-    # so the #call method is just "scrape, welcome, learn more, #start" - idea from 'worlds-best-restaurants'
-    
     PackersRoster::Player.create_from_collection(PackersRoster::Scraper.scrape_roster)
     
     puts "\nWelcome to the Packers Roster App!\n".green
     puts "To learn more about a player:".green
     
-    # should this ^ be the whole call method, with #start?
-    ## more methods to simplify code below:
+    # should this ^ be the whole call method, with a #start with more cli methods?
     
-    # search_by_position if input == 3
-    # another_search method
     # make POSITIONS constant?
     
     input = nil
@@ -28,10 +22,10 @@ class PackersRoster::CLI
       if input == "1"
         search_by_name
         
-        puts "Would you like to run another search? y/n".green
-        input = gets.strip
-        if input == "y"
-        elsif input == "n"
+        puts "Would you like to run another search? Y/N".green
+        input = gets.strip.upcase
+        if input == "Y"
+        elsif input == "N"
           input = "quit"
           puts "Go Pack!".green
         end
