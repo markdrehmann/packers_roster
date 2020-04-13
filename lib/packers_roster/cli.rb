@@ -15,7 +15,7 @@ class PackersRoster::CLI
     # search_by_number if input == 2
     # search_by_position if input == 3
     # another_search method
-    # POSITIONS constant variable?
+    # make POSITIONS constant?
     
     input = nil
     until input == "quit"
@@ -87,5 +87,16 @@ class PackersRoster::CLI
     end # closes until
     
   end # closes call method
+  
+  ## this works except it doesn't close the "until" loop, probably because input = "quit" is no longer in scope. I know there has to be a better way than the until loop, but that's a slightly bigger project...
+  # def another_search
+  #   puts "Would you like to run another search? y/n".green
+  #   input = gets.strip
+  #   if input == "y"
+  #   elsif input == "n"
+  #     input = "quit"
+  #     puts "Go Pack!".green
+  #   end
+  # end
   
 end
