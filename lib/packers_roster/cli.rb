@@ -4,11 +4,11 @@ class PackersRoster::CLI
     # potention refactoring - create a #start method that gets called in #called
     # so the #call method is just "scrape, welcome, learn more, #start" - idea from 'worlds-best-restaurants'
     
-    PackersRoster::Player.create_from_collection
+    PackersRoster::Player.create_from_collection(PackersRoster::Scraper.scrape_roster)
     
     puts "\nWelcome to the Packers Roster App!\n".green
     puts "To learn more about a player:".green
-    input = ""
+    input = nil
     until input == "quit"
     puts "\n  Enter '1' to search by name".green
     puts "  Enter '2' to search by number".green

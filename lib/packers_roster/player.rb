@@ -8,8 +8,7 @@ class PackersRoster::Player
     @@all << self
   end
 
-  def self.create_from_collection
-    players_array = PackersRoster::Scraper.scrape_roster
+  def self.create_from_collection(players_array)
     players_array.each do |player_hash|
       PackersRoster::Player.new(player_hash)
     end
