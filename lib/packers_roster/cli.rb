@@ -1,6 +1,6 @@
 class PackersRoster::CLI
+  
   def call
-
     PackersRoster::Player.create_from_collection(PackersRoster::Scraper.scrape_roster)
     
     puts "\nWelcome to the Packers Roster App!\n".green
@@ -12,11 +12,8 @@ class PackersRoster::CLI
     
     input = nil
     until input == "quit"
-      puts "\n  Enter '1' to search by name".green
-      puts "  Enter '2' to search by number".green
-      puts "  Enter '3' to search by position\n".green
-      puts "To end your search, type 'quit'".green
-    
+      menu
+      
       input = gets.strip
       
       if input == "1"
@@ -99,12 +96,19 @@ class PackersRoster::CLI
     positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
     puts "\nEnter one of the following positions:".green
     puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
-    user_input = gets.strip
+    user_input = gets.strip.upcase
     if positions.include?(user_input)
       PackersRoster::Player.all_at_position(user_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
     else
       puts "Invalid entry".red
     end
+  end
+  
+  def menu
+    puts "\n  Enter '1' to search by name".green
+    puts "  Enter '2' to search by number".green
+    puts "  Enter '3' to search by position\n".green
+    puts "To end your search, type 'quit'".green
   end
   
 end
