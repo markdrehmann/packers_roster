@@ -1,9 +1,7 @@
 class PackersRoster::Scraper
   
-  SITE = "https://packers.com/team/players-roster"
-  
   def self.scrape_roster
-    doc = Nokogiri::HTML(open(SITE))
+    doc = Nokogiri::HTML(open("https://packers.com/team/players-roster"))
     array = []
     doc.css("tr").each do |p_page|
         info = p_page.text.strip.split(" ")
