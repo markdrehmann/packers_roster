@@ -8,6 +8,15 @@ class PackersRoster::CLI
     
     puts "\nWelcome to the Packers Roster App!\n".green
     puts "To learn more about a player:".green
+    
+    # should this ^ be the whole call method, with #start?
+    ## more methods to simplify code below:
+    # search_by_name, so if input == 1, run that method
+    # search_by_number if input == 2
+    # search_by_position if input == 3
+    # another_search method
+    # POSITIONS constant variable?
+    
     input = nil
     until input == "quit"
     puts "\n  Enter '1' to search by name".green
@@ -19,13 +28,13 @@ class PackersRoster::CLI
       
       if input == "1"
         puts "\nEnter the player's name".green
-        user_input = gets.strip
-        if user_input == "Inigo Montoya"
+        name_input = gets.strip
+        if name_input == "Inigo Montoya"
           puts "You killed my father. Prepare to die.".red
-        elsif PackersRoster::Player.find_by_name(user_input) == nil
+        elsif PackersRoster::Player.find_by_name(name_input) == nil
           puts "Invalid entry".red
         else
-          PackersRoster::Player.find_by_name(user_input).list_stats
+          PackersRoster::Player.find_by_name(name_input).list_stats
         end
         puts "Would you like to run another search? y/n".green
         input = gets.strip
