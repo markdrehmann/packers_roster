@@ -65,11 +65,11 @@ class PackersRoster::CLI
   
   def search_by_number
     puts "\nEnter the player's number".green
-    user_input = gets.strip
-    if PackersRoster::Player.find_by_number(user_input) == nil
+    number_input = gets.strip
+    if PackersRoster::Player.find_by_number(number_input) == nil
       puts "Invalid entry".red
     else
-      PackersRoster::Player.find_by_number(user_input).list_stats
+      PackersRoster::Player.find_by_number(number_input).list_stats
     end
   end
   
@@ -77,9 +77,9 @@ class PackersRoster::CLI
     positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
     puts "\nEnter one of the following positions:".green
     puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
-    user_input = gets.strip.upcase
-    if positions.include?(user_input)
-      PackersRoster::Player.all_at_position(user_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
+    pos_input = gets.strip.upcase
+    if positions.include?(pos_input)
+      PackersRoster::Player.all_at_position(pos_input).each{|p| puts "#{p.name} - ##{p.number}".yellow}
     else
       puts "Invalid entry".red
     end
