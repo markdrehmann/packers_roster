@@ -45,7 +45,7 @@ class PackersRoster::CLI
     elsif @input == "N"
       @input = "quit"
       puts "Go Pack!".green
-    end
+    end # technically this doesn't have an 'else', but if someone puts in wrong entry, they go to main menu anyway
   end
   
   def search_by_name
