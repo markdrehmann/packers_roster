@@ -43,7 +43,7 @@ class PackersRoster::CLI
     @input = gets.strip.upcase
     if @input == "Y"
     elsif @input == "N"
-      @input = "quit"
+      @input = "quit" # closes the until loop - there's probaby a better loop method, but this works
       puts "Go Pack!".green
     end # technically this doesn't have an 'else', but if someone puts in wrong entry, they go to main menu anyway
   end
