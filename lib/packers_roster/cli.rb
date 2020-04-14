@@ -50,8 +50,8 @@ class PackersRoster::CLI
   
   def search_by_name
     puts "\nEnter the player's name".green
-    name_input = gets.strip
-    if name_input == "Inigo Montoya"
+    name_input = gets.strip.upcase
+    if name_input == "INIGO MONTOYA"
       puts "You killed my father. Prepare to die.".red
     elsif PackersRoster::Player.find_by_name(name_input) == nil
       puts "Invalid entry".red
