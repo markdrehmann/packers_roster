@@ -1,38 +1,35 @@
 class PackersRoster::CLI
   
   def call
-    PackersRoster::Player.create_from_collection(PackersRoster::Scraper.scrape_roster)
-    
-    puts "\nWelcome to the Packers Roster App!\n".green
-    puts "To learn more about a player:".green
-    
-    # should this ^ be the whole call method, with a #start with more cli methods?
-    # make POSITIONS constant?
-    
+    welcome_scrape
+ 
     @input = nil
     until @input == "quit"
       menu
-      
       @input = gets.strip
+      
       if @input == "1"
         search_by_name
         another_search
-        
       elsif @input == "2"
         search_by_number
         another_search
-        
       elsif @input == "3"
         search_by_position
         another_search
-        
       elsif @input == "quit"
         puts "Go Pack!".green
       else
         puts "Invalid entry, can you try again?".red
       end
     end
-  end # closes call method
+  end
+  
+  def welcome_scrape
+    PackersRoster::Player.create_from_collection(PackersRoster::Scraper.scrape_roster)
+    puts "\nWelcome to the Packers Roster App!\n".green
+    puts "To learn more about a player:".green
+  end
   
   def menu
     puts "\n  Enter '1' to search by name".green
@@ -74,6 +71,7 @@ class PackersRoster::CLI
   end
   
   def search_by_position
+    # make POSITIONS a constant?
     positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
     puts "\nEnter one of the following positions:".green
     puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
