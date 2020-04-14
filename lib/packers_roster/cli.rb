@@ -71,7 +71,7 @@ class PackersRoster::CLI
   end
   
   def search_by_position
-    # make POSITIONS a constant?
+    # should POSITIONS be a constant?
     positions = ["QB", "RB", "FB", "WR", "TE", "T", "G", "C", "LB", "S", "DL", "CB", "LS", "K", "P"]
     puts "\nEnter one of the following positions:".green
     puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
