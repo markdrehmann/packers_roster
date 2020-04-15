@@ -2,8 +2,7 @@ class PackersRoster::CLI
   
   def call
     welcome_scrape
-    
- 
+
     @input = nil
     until @input == "quit"
       menu
