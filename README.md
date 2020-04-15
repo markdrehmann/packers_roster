@@ -5,6 +5,7 @@ Learn more about the Green Bay Packers players!
 ## Installation
 
 Fork and Clone this repo from https://github.com/markdrehmann/packers_roster
+Change Directory - 'cd packers_roster'
 Run 'bundle install'
 
 ## Usage
