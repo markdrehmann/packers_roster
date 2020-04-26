@@ -77,7 +77,7 @@ class PackersRoster::CLI
     puts "QB  RB  FB  WR  TE  T  G  C\nLB  S   DL  CB  LS  K  P".yellow
     pos_input = gets.strip.upcase
     if positions.include?(pos_input)
-      PackersRoster::Player.all_at_position(pos_input).sort_by{|o| o.number}.each{|p| puts "#{p.name} - ##{p.number}".yellow}
+      PackersRoster::Player.all_at_position(pos_input).sort_by{|p| p.number}.each{|p| puts "#{p.name} - ##{p.number}".yellow}
     else
       puts "Invalid entry".red
     end
