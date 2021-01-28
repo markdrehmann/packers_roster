@@ -39,4 +39,5 @@ class PackersRoster::Player
   def self.all
     @@all
   end
+  
 end
