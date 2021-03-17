@@ -3,7 +3,6 @@ class PackersRoster::Scraper
   def self.scrape_roster
     doc = Nokogiri::HTML(open("https://packers.com/team/players-roster"))
     array = []
-    
     doc.css("tr").each do |p_page|
         info = p_page.text.strip.split(" ")
         p_name = info[0..1].join(" ")
