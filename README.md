@@ -1,6 +1,6 @@
 # PackersRoster
 
-Learn more about the Green Bay Packers!
+Learn more about the Green Bay Packers players!
 
 ## Installation
 
