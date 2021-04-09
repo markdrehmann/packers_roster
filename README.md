@@ -10,7 +10,7 @@ Run `bundle install`
 
 ## Usage
 
-Run the file - ./bin/packers_roster
+Run the file `./bin/packers_roster`
 Follow the directions to learn more about Packers players!
 
 ## Development
