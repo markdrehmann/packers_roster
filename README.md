@@ -2,7 +2,7 @@
 
 Learn more about the Green Bay Packers!
 
-### Installation
+## Installation
 
 Fork and Clone this repository at https://github.com/markdrehmann/packers_roster
 Change Directory - `cd packers_roster`
