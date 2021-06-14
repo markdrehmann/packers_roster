@@ -8,7 +8,7 @@ Fork and Clone this repository at https://github.com/markdrehmann/packers_roster
 Change Directory - `cd packers_roster`
 Run `bundle install`
 
-### Usage
+## Usage
 
 Run the file `./bin/packers_roster`
 Follow the directions to learn more about Packers players!
